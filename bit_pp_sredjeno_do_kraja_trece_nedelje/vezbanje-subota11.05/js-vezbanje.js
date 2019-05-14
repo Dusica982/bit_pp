@@ -4,15 +4,15 @@ Write a function to count vowels in a provided string. If you are  not aware of 
 Vowels are a, e, i, o, and u as well as A, E, I, O, and U. */
 
 
-var str ="kafeteria";
+var str = "kafeteria";
 
-function string (a){
-    var sum=0;    
-    for  (var i=0; i<a.length; i++){
-        
+function string(a) {
+    var sum = 0;
+    for (var i = 0; i < a.length; i++) {
+
         switch (str[i]) {
-   
-            case "a": 
+
+            case "a":
             case "e":
             case "i":
             case "o":
@@ -22,18 +22,18 @@ function string (a){
             case "I":
             case "O":
             case "U":
-            
-            sum=sum+1;
-            break;
+
+                sum = sum + 1;
+                break;
 
             // default: sum="There is no vovwels";
             // break;                                ////kada se stavi i default, on ga pregazi je jer sum stavljeno da je = stringu
-            
+
         }
     }
 
-    if(sum == 0){
-        sum="There is no vovwels";
+    if (sum == 0) {
+        sum = "There is no vovwels";
     }
 
 
@@ -41,45 +41,39 @@ function string (a){
 }
 
 
-console.log (string(str));
+console.log(string(str));
 
 
 
 
 
 
-   
+
 /* zadatak 2
 Write a function that combines two arrays by alternatingly taking elements.
 
 [‘a’,’b’,’c’], [1,2,3] -> [‘a’,1,’b’,2,’c’,3]
 */
 
-function array (array1, array2){
+function array(array1, array2) {
     var newArray = [];
 
     var i;
-   
-    for (i=0; i<array1.length; i++){
-        newArray[2*i]=array1[i];
-        newArray[2*i+1]=array2[i];
+
+    for (i = 0; i < array1.length; i++) {
+        newArray[2 * i] = array1[i];
+        newArray[2 * i + 1] = array2[i];
 
     }
     return newArray;
 
 }
 
-var a1 = ["a","b","c"]; 
-var a2 =[1,2,3];
+var a1 = ["a", "b", "c"];
+var a2 = [1, 2, 3];
 
 
 console.log(array(a1, a2));
-
-
-
-
-
-
 
 
 
@@ -93,57 +87,53 @@ For example [1,2,3,4,5,6] rotated by two becomes [3,4,5,6,1,2]
 */
 
 
-function rotate (arr, k){
+function rotate(arr, k) {
     var i;
-    var newArray=[];
-    var j = 0; 
+    var newArray = [];
+    var j = 0;
 
-    for (i=k; i<arr.length; i++){
+    for (i = k; i < arr.length; i++) {
         var j = i - k;
         // j++
 
-    	newArray[j] = arr[i];
+        newArray[j] = arr[i];
     }
 
     for (i = 0; i < k; i++) {
-    	j = arr.length - k + i;
+        j = arr.length - k + i;
 
-    	newArray[j] = arr[i];
+        newArray[j] = arr[i];
     }
 
     return newArray;
 
 }
 
-console.log(rotate([1,2,3,4,5,6], 2));
+console.log(rotate([1, 2, 3, 4, 5, 6], 2));
 
 
 
- 
-/*  zadatak 4
-Write a function that takes a number and returns array of its digits.
-*/
- 
+
 /*  zadatak 4
 Write a function that takes a number and returns array of its digits.
 */
 
-function digits (n){
+function digits(n) {
 
 
-    var array=[];
+    var array = [];
     var elementNumber;
-    var i =0;
+    var i = 0;
 
     while (n) {
-        elementNumber=n%10;
+        elementNumber = n % 10;
         array[i] = elementNumber;
         i++;
         n = (n - elementNumber) / 10;
     }
 
 
-return array;
+    return array;
 }
 
 console.log(digits(357));
@@ -153,27 +143,27 @@ console.log(digits(357));
 
 Write a program that prints a multiplication table for numbers up to 4.
 */
- 
-1*1 1*2 1*3 1*4
-2*1 2*2 2*3 2*4
-3*1 3*2 3*3 3*4
-4*1 4*2 4*3 4*4
+
+1 * 1 1 * 2 1 * 3 1 * 4
+2 * 1 2 * 2 2 * 3 2 * 4
+3 * 1 3 * 2 3 * 3 3 * 4
+4 * 1 4 * 2 4 * 3 4 * 4
 
 
-function multi (n){
+function multi(n) {
 
     var i;
     var j;
-    var table=""; 
+    var table = "";
 
-    for (i=1; i<=n; i++){
+    for (i = 1; i <= n; i++) {
 
-        for (j=1; j<=n; j++){
+        for (j = 1; j <= n; j++) {
             var prod;
-            prod = i*j;
+            prod = i * j;
             table = table + " " + prod;
         }
-        
+
         table = table + "\n";
 
     }
@@ -182,10 +172,8 @@ function multi (n){
     return table;
 }
 
-var n=6;
-console.log (multi(n));
-
-
+var n = 12;
+console.log(multi(n));
 
 
 
@@ -197,89 +185,101 @@ console.log (multi(n));
 Write a function to input temperature in Centigrade and convert to Fahrenheit.
 */
 
-function temperature (C){
-    var F=0;
+function temperature(C) {
+    var F = 0;
 
-    F=1.8*C+32
+    F = 1.8 * C + 32
     return F;
 }
 
 
-var C=0;
+var C = 0;
 
-console.log (temperature(30));
+console.log(temperature(40));
 
 
 
- 
+
 /* zadatak 6
 Write a function to find the maximum element in array of numbers. Filter out all non-number elements.
 */
- 
-function maxElement(a){
+
+function maxElement(a) {
 
     var max;
     var i;
-    var newArr=[];
-    var j=0;
+    var newArr = [];
+    var j = 0;
 
-        //pravimo novi niz
+    //pravimo novi niz
 
-    for (i=0; i<a.length; i++){
+    for (i = 0; i < a.length; i++) {
         //da li je broj ili ne - parsInt
-        var tmp=parseInt(a[i]);
+        var tmp = parseInt(a[i]);
 
         // parseInt --> number or NaN 
         // isNaN (tmp) -->  true ili false
-        if (isNaN(tmp) == false){
+        if (isNaN(tmp) == false) {
             newArr[j] = a[i];
             j++;
         }
-
-
     }
 
-        max = newArr[0];
-    
-    for (i=1; i<newArr.length; i++){
-        if(newArr[i]>max){
-            max=newArr[i];
+    max = newArr[0];
+    for (i = 1; i < newArr.length; i++) {
+        if (newArr[i] > max) {
+            max = newArr[i];
         }
     }
 
-
-    
     return max;
 }
 
 
 var array = [1, true, 124, -4, 4, 50, "ball", NaN];
-console.log (maxElement(array));
+console.log(maxElement(array));
+
+
+//krace resenje (od Sase prekopirano)
+
+function maxEl(someArr) {
+    var max = someArr[0];
+
+    for (var i = 0; i < someArr.length; i++) {
+        if (max < someArr[i] && typeof someArr[i] === 'number') {
+            max = someArr[i];
+            console.log(max);
+
+        }
+    }
+    return max;
+}
+var a = [1, 555, 38, -33, 'bla', 'bla'];
+console.log(maxEl(a));
 
 
 
 
 //  zadatak 7 Write a function to find the maximum and minimum elements. Function returns an array.
 
-function maxandmin (a){
+function maxandmin(a) {
 
     var i;
-    var min=a[0];
-    var max=a[0];
+    var min = a[0];
+    var max = a[0];
 
-    for (i=0; i<a.length; i++){
+    for (i = 0; i < a.length; i++) {
 
+        if (a[i] < min) {
+            min = a[i];
+        } else if (a[i] > max) {
 
-if(a[i]<min){  
-    min=a[i];
-} else if (a[i]>max){
-    
-    max=a[i];
+            max = a[i];
 
-}
-maxandmin = [min, max];
-}
-return maxandmin;
+        }
+        maxandmin = [min, max];
+    }
+    return maxandmin;
 }
 
 var array = [9, 7, 12, 205, 145];
@@ -290,45 +290,189 @@ console.log(maxandmin(array));
 // zadatak 8 Write a function to find the median element of array.
 
 // ako bismo trazili srednji u nizu, ovako:
-function median (a){
+function median(a) {
 
-    for (var i=0; i<a.length; i++){
-    
-        var medium;
-    
-        if (a.lenght%2===0){
-        medium=a.length/2;
-    } else if(a.length%2===1){
-        medium=(a.length+1)/2;
-    
-    }
-    return medium;
-    }
-    }
-    
-    var array=[7, 8, 10, 145, 9];
-    
-    console.log(median(array));
+    for (var i = 0; i < a.length; i++) {
 
-//ako bismo trazili srednji po vrednosti
+        var mediumIndex;
+        var mediumElement;
+
+        if (a.lenght % 2 === 0) {
+            mediumIndex = a.length / 2;
+        } else if (a.length % 2 === 1) {
+            mediumIndex = (a.length - 1) / 2;
+        }
+        mediumElement = a[mediumIndex];
+        return mediumElement;
+    }
+}
+
+var array = [7, 8, 10, 145, 9];
+
+console.log(median(array));
+
+// prvo da sortiramo od najmanjeg ka najvecem pa onda nadjemo srednji
+//ovde smo nasli srednji
+
+function sort(numbers) {
+
+    for (var j = 0; j < numbers.length; j++) {
+        for (var i = 0; i < numbers.length; i++) {
+
+            if (numbers[i] > numbers[i + 1]) {
+                var tmp = numbers[i];
+                numbers[i] = numbers[i + 1];
+                numbers[i + 1] = tmp;
+            }
+        }
+    }
+    return numbers;
+
+}
+var randomNumbers = [8, 7, 9, 3];
+console.log(sort(randomNumbers));
+
 
 
 
 //  zadatak 9 Write a function to find the element that occurs most frequently.
 
- 
+function getMostFrequentElement(elements) {
+    var elementsFrequency = getElementsFrequency(elements);
+    var maxElementAndIndex = getMaxElementAndPosition(elementsFrequency);
 
-//  zadatak 10 Write a function to find and return the first, middle and last element of an array if the array has odd number of elements. If number of elements is even, return just the first and the last. In other cases (empty array), input array should be returned.
+    var indexOfMostFrequentElement = maxElementAndIndex[1];
 
- 
+    return elements[indexOfMostFrequentElement];
+}
+
+function getElementsFrequency(elements) {
+    var occ = [];
+
+    for (var j = 0; j < elements.length; j++) {
+        var element = elements[j];
+        var counter = 0;
+
+        for (var i = 0; i < elements.length; i++) {
+            if (element === elements[i]) {
+                counter++;
+            }
+        }
+
+        occ[j] = counter;
+    }
+
+    return occ;
+}
+
+function getMaxElementAndPosition(numbers) {
+    var maxElementValue = numbers[0];
+    var maxElementIndex = 0;
+
+    for (var i = 0; i < numbers.length; i++) {
+        if (numbers[i] > maxElementValue) {
+            maxElementValue = numbers[i];
+            maxElementIndex = i;
+        }
+    }
+
+    return [maxElementValue, maxElementIndex];
+}
+
+var chars = ['c', 'd', 't', 'i', 'd'];
+
+var result = getMostFrequentElement(chars);
+console.log(result);
+
+
+/*  zadatak 10 Write a function to find and return the first, middle and last element of an array if the array has odd number of elements. 
+If number of elements is even, return just the first and the last. In other cases (empty array), input array should be returned. */
+
+// function firstMiddleLastElement(a) {
+//     var i;
+//     var firstLastMidleEl;
+
+
+//     if ()
+
+//         for (i = 0; i < a.length; i++) {
+
+//             var firstElement = a[i];
+
+//             if (a.lenght % 2 === 0) {
+//                 middleElement = a.length / 2;
+//             } else if (a.length % 2 === 1) {
+//                 middleElement = (a.length - 1) / 2;
+//             }
+
+//             var lastElement = a[a.length - 1];
+
+
+//             firstLastMidleEl = [firstElement, middleElement, lastElement];
+//             return firstLastMidleEl;
+
+//         }
+
+// }
+
+// var array = [5, 10, 2, 3, 7];
+// console.log(firstMiddleLastElement(array));
+
+
+
+function firstMiddleLastElement(a) {
+    var i;
+    var firstElement = a[0];
+
+    var firstLastMidleEl;
+    var midleInd;
+    var middleElement;
+    var lastElement = a[a.length - 1];
+
+
+    if (a.length % 2 === 1) {
+        midleInd = (a.length - 1) / 2;
+        middleElement = a[midleInd];
+        firstLastMidleEl = [firstElement, middleElement, lastElement];
+
+
+    } else {
+        firstLastMidleEl = [firstElement, lastElement];
+
+    }
+    return firstLastMidleEl;
+}
+
+var array = [5, 10, 2, 3, 7];
+console.log(firstMiddleLastElement(array));
+
+
+
 
 //  zadatak 11 Write a function to find the average of N elements. Make the function flexible to receive dynamic number or parameters.
 
- 
+
+function average(a) {
+
+    var averageValue = 0;
+    var i;
+    var sum = 0;
+    for (i = 0; i < a.length; i++) {
+        sum = sum + a[i];
+        averageValue = sum / a.length;
+    }
+
+    return averageValue;
+
+}
+
+var array = [1, 4, 7, 3, 9];
+console.log(average(array));
+
 
 //  zadatak 12 Write a function to find all the numbers greater than the average.
 
- 
+
 
 /* zadatak 13
 The body mass index (BMI) is the ratio of the weight of a person (in kilograms) to the square of the height (in meters). Write a function that takes two parameters, weight and height, computes the BMI, and prints the corresponding BMI category:
@@ -340,7 +484,7 @@ Overweight: greater than or equal to 25 but less than 30
 Obese: greater than or equal to 30 but less than 40
 Morbidly obese: greater than or equal to 40
 */
- 
+
 
 
 /* zadatak 14
@@ -356,7 +500,7 @@ For example the list ["Hello", "World", "in", "a", "frame"] gets printed as:
 *********
 
 */
- 
+
 
 /*  zadatak 15
 Write a program that calculates the maximum of two given numbers. 
@@ -390,7 +534,7 @@ Result: 4
 */
 
 
- 
+
 /*  zadatak 19
 Write a program that draws a square of a given size. For example,  if the size of square is 5 the program should draw: 
 *****
@@ -488,7 +632,7 @@ Output: [ 2, 10, 12, 16, 22, 24, 26, 30 ]
 (skip :))Sort a previously defined array in a descending order and display it in the console.
 Input:  [ 13, 11, 15, 5, 6, 1, 8, 12 ]
 Output: [ 15, 13, 12, 11, 8, 6, 5, 1 ]
-*/    
+*/
 
 
 
@@ -556,7 +700,7 @@ Write a program to insert a string within a string at a particular position (def
 "My random string", "JS " -> "JS My random string"
 "My random string", "JS ", 10 -> "My random JS string"
 */
- 
+
 
 
 /* zadatak 38
@@ -564,14 +708,14 @@ Write a program to join all elements of the array into a string skipping element
 
 [NaN, 0, 15, false, -22, '', undefined, 47, null]
 */
-   
+
 
 /* zadatak 39
 Write a program to filter out falsy values from the array.
 
 [NaN, 0, 15, false, -22, '', undefined, 47, null] -> [15, -22, 47]
 */
-   
+
 
 /*  zadatak 40
 Write a function that reverses a number. The result must be a number.
@@ -581,17 +725,17 @@ Write a function that reverses a number. The result must be a number.
 
 
 function reverseNumber(num) {
-   num = num + "";
-   var output = "";
-   var lastIndex = num.length - 1;
+    num = num + "";
+    var output = "";
+    var lastIndex = num.length - 1;
 
-   for (var index = 0; index < num.length; index++) {
-       var element = num[lastIndex - index];
-       output += element;
-   }
+    for (var index = 0; index < num.length; index++) {
+        var element = num[lastIndex - index];
+        output += element;
+    }
 
-   var reversedNum = parseFloat(output);
-   return reversedNum;
+    var reversedNum = parseFloat(output);
+    return reversedNum;
 }
 
 var result = reverseNumber(98765)
@@ -607,24 +751,24 @@ Write a function to get the last element of an array. Passing a parameter 'n' wi
 [7, 9, 0, -2] -> -2
 [7, 9, 0, -2], 2 -> [0, -2]  
 */
-   
 
-function lastArray(a, n){
+
+function lastArray(a, n) {
     var i;
     var result = [];
 
-    for (i=a.length - n; i < a.length; i++){
-        
+    for (i = a.length - n; i < a.length; i++) {
+
         result[i - n] = a[i];
-        
+
     }
     return result;
 
 }
 
 
-var arr=[7, 9, 0, -2];
-console.log(lastArray(arr, 2));                         
+var arr = [7, 9, 0, -2];
+console.log(lastArray(arr, 2));
 
 /* zadatak 42
 Write a function to create a specified number of elements with pre-filled numeric value array.
@@ -634,23 +778,23 @@ Write a function to create a specified number of elements with pre-filled numeri
 2 -> [null, null] 
 */
 
-function elements (num, el){
+function elements(num, el) {
 
-    var newArray =[];    
+    var newArray = [];
 
-for (i=0; i<num; i++){
+    for (i = 0; i < num; i++) {
 
-        newArray[i]=el;
+        newArray[i] = el;
 
-}return newArray;
+    } return newArray;
 }
 
 
 
-console.log(elements(6,0));
+console.log(elements(6, 0));
 
 
-   
+
 /* zadatak 43
 Write a function that says whether a number is perfect.
 28 -> 28 is a perfect number.
@@ -663,18 +807,18 @@ E.g.: The first perfect number is 6, because 1, 2 and 3 are its proper positive 
 
 
 function isPerfect(number) {
-   var temp = 0;
-   for (var i = 1; i <= number / 2; i++) {
-       if (number % i === 0) {
-           temp += i;
-       }
-   }
+    var temp = 0;
+    for (var i = 1; i <= number / 2; i++) {
+        if (number % i === 0) {
+            temp += i;
+        }
+    }
 
-   if (temp === number && temp !== 0) {
-       console.log(number + " is a perfect number.");
-   } else {
-       console.log(num + " is not a perfect number.");
-   }
+    if (temp === number && temp !== 0) {
+        console.log(number + " is a perfect number.");
+    } else {
+        console.log(num + " is not a perfect number.");
+    }
 }
 
 isPerfect(28);
@@ -691,23 +835,23 @@ Write a function to find a word within a string.
 
 function searchWordCount(text, word) {
 
-   var x = 0;
-   var y = 0;
+    var x = 0;
+    var y = 0;
 
-   for (i = 0; i < text.length; i++) {
-       if (text[i] == word[0]) {
-           for (j = i; j < i + word.length; j++) {
-               if (text[j] == word[j - i]) {
-                   y++;
-               }
-               if (y == word.length) {
-                   x++;
-               }
-           }
-           y = 0;
-       }
-   }
-   return "'" + word + "' was found " + x + " times.";
+    for (i = 0; i < text.length; i++) {
+        if (text[i] == word[0]) {
+            for (j = i; j < i + word.length; j++) {
+                if (text[j] == word[j - i]) {
+                    y++;
+                }
+                if (y == word.length) {
+                    x++;
+                }
+            }
+            y = 0;
+        }
+    }
+    return "'" + word + "' was found " + x + " times.";
 }
 
 console.log(searchWordCount('The quick brown fox', 'fox'));
@@ -727,24 +871,24 @@ Write a program to find the most frequent item of an array.
 
 
 function findFrequentItem(inputArr) {
-   var mostFrequent = 1;
-   var m = 0;
-   var item;
-   for (var i = 0; i < inputArr.length; i++) {
-       for (var j = i; j < inputArr.length; j++) {
-           if (inputArr[i] == inputArr[j]) {
-               m++;
-           }
-           if (mostFrequent < m) {
-               mostFrequent = m;
-               item = inputArr[i];
-           }
-       }
-       m = 0;
-   }
+    var mostFrequent = 1;
+    var m = 0;
+    var item;
+    for (var i = 0; i < inputArr.length; i++) {
+        for (var j = i; j < inputArr.length; j++) {
+            if (inputArr[i] == inputArr[j]) {
+                m++;
+            }
+            if (mostFrequent < m) {
+                mostFrequent = m;
+                item = inputArr[i];
+            }
+        }
+        m = 0;
+    }
 
-   // output: item (number of times)
-   return item + " ( " + mostFrequent + " times ) "
+    // output: item (number of times)
+    return item + " ( " + mostFrequent + " times ) "
 }
 
 var arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
