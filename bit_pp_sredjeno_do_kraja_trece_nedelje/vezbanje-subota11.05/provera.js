@@ -1,17 +1,20 @@
-// zadatak 8 Write a function to find the median element of array.
+/*  zadatak 16
+Write a program that checks if a given number is odd.
+Input: 56
+Result: No
+*/
 
 
-function median (a){
+function odd (a){
 
 
+    if (a%2===0){
+        return no;
 
-a.sort();
 
+    } else if 
+        return yes;   
 
-
-return a;
 }
 
-var array=[7, 8, 10, 145, 9];
-
-console.log(median(array));
+console.log (odd(59));
