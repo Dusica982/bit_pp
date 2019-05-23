@@ -4,11 +4,13 @@ function GameStudio(name, address) {
     this.employees = [];
     this.games = [];
 
-    this.makeGame = function (game) {
-        this.games.push(game);
+    this.makeGame = function (name, genre, recommendedAge) {
+        var newGame = new Game(name, genre, recommendedAge);
+        this.games.push(newGame);
     };
 
-    this.hireEmployee = function (employee) {
+    this.hireEmployee = function (name, age, position) {
+        var employee = new Employee(name, age, position);
         this.employees.push(employee);
     };
 
@@ -31,8 +33,6 @@ function GameStudio(name, address) {
 
 }
 
-var capcom = new GameStudio('Capcom', 'Bulevar Kralja Aleksandra 35'); //Pravljenje Game Studia
-
 function Game(name, genre, recommendedAge) {
     this.name = name;
     this.genre = genre;
@@ -45,12 +45,6 @@ function Game(name, genre, recommendedAge) {
         );
     }
 };
-
-//pravljenje Igara
-var residentEvil = new Game('Resident Evil', 'Horror', '17+');
-var monsterHunter = new Game('Monster Hunter World', "Role Playing Game", '12+');
-var streetFighter = new Game('Street Fighter V', 'Fighting Game', '12+');
-
 
 function Employee(name, age, position) {
     this.name = name;
@@ -66,20 +60,15 @@ function Employee(name, age, position) {
 
 };
 
-//pravljenje Zaposlenih
-var milos = new Employee("Milos", 26, "CEO");
-var dusica = new Employee("Dusica", 37, "kafe kuvarica");
-var nenad = new Employee("Nenad", 34, "Team lead");
+var capcom = new GameStudio('Capcom', 'Bulevar Kralja Aleksandra 35'); //Pravljenje Game Studia
 
+capcom.hireEmployee("Milos", 26, "CEO");
+capcom.hireEmployee("Dusica", 37, "kafe kuvarica");
+capcom.hireEmployee("Nenad", 29, "Team lead");
 
-
-capcom.hireEmployee(milos);
-capcom.hireEmployee(dusica);
-capcom.hireEmployee(nenad);
-
-capcom.makeGame(residentEvil);
-capcom.makeGame(monsterHunter);
-capcom.makeGame(streetFighter);
+capcom.makeGame('Resident Evil', 'Horror', '17+');
+capcom.makeGame('Monster Hunter World', "Role Playing Game", '12+');
+capcom.makeGame('Street Fighter V', 'Fighting Game', '12+');
 
 var gameInfo = capcom.listAllGames();
 var employeeInfo = capcom.listAllEmployees();
