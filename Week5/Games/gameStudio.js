@@ -31,6 +31,8 @@ function GameStudio(name, address) {
 
 }
 
+var capcom = new GameStudio('Capcom', 'Bulevar Kralja Aleksandra 35'); //Pravljenje Game Studia
+
 function Game(name, genre, recommendedAge) {
     this.name = name;
     this.genre = genre;
@@ -43,6 +45,12 @@ function Game(name, genre, recommendedAge) {
         );
     }
 };
+
+//pravljenje Igara
+var residentEvil = new Game('Resident Evil', 'Horror', '17+');
+var monsterHunter = new Game('Monster Hunter World', "Role Playing Game", '12+');
+var streetFighter = new Game('Street Fighter V', 'Fighting Game', '12+');
+
 
 function Employee(name, age, position) {
     this.name = name;
@@ -58,16 +66,12 @@ function Employee(name, age, position) {
 
 };
 
-var capcom = new GameStudio('Capcom', 'Bulevar Kralja Aleksandra 35');
-
+//pravljenje Zaposlenih
 var milos = new Employee("Milos", 26, "CEO");
 var dusica = new Employee("Dusica", 37, "kafe kuvarica");
 var nenad = new Employee("Nenad", 34, "Team lead");
 
 
-var residentEvil = new Game('Resident Evil', 'Horror', '17+');
-var monsterHunter = new Game('Monster Hunter World', "Role Playing Game", '12+');
-var streetFighter = new Game('Street Fighter V', 'Fighting Game', '12+');
 
 capcom.hireEmployee(milos);
 capcom.hireEmployee(dusica);
