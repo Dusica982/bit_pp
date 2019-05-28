@@ -1,99 +1,98 @@
 "use strict";
 
-(function() {
+(function () {
   function Genre(name) {
     this.name = name;
-
-    this.getData = function() {
-      var firstLetter = this.name.slice(0, 1);
-      var lastLetter = this.name.slice(this.name.length - 1, this.name.length);
-      return "" + firstLetter.toUpperCase("") + lastLetter.toUpperCase("");
-    };
   }
+  Genre.prototype.getData = function () {
+    var firstLetter = this.name.slice(0, 1);
+    var lastLetter = this.name.slice(this.name.length - 1, this.name.length);
+    return "" + firstLetter.toUpperCase("") + lastLetter.toUpperCase("");
+  };
 
   function Movie(title, genre, length) {
     this.title = title;
     this.genre = genre;
     this.length = length;
-
-    this.getData = function() {
-      return "" + this.title + ", " + this.length + " min" + ", " + this.genre.getData();
-    };
   }
+  Movie.prototype.getData = function () {
+    return "" + this.title + ", " + this.length + " min" + ", " + this.genre.getData();
+  };
 
   function Program(date) {
     this.date = new Date(date);
     this.list = [];
     this.totalNumberOfMovies = 0;
-
-    this.addMovie = function(news) {
-      this.list.push(news);
-      this.totalNumberOfMovies++;
-    };
-
-    this.programLength = function() {
-      var totalMovielength = 0;
-
-      for (var i = 0; i < this.list.length; i++) {
-        totalMovielength += this.list[i].length;
-      }
-
-      return totalMovielength;
-    };
-
-    this.listOfMovies = function() {
-      var listOfAllMovies = "";
-
-      for (var i = 0; i < this.list.length; i++) {
-        listOfAllMovies += "\t\t\t\t\t\t" + this.list[i].getData() + "\n";
-      }
-
-      return listOfAllMovies;
-    };
-
-    this.getData = function() {
-      return (
-        "" +
-        this.date.toLocaleDateString() +
-        ", program duration " +
-        this.programLength() +
-        "min" +
-        "\n" +
-        this.listOfMovies()
-      );
-    };
   }
+
+  Program.prototype.addMovie = function (news) {
+    this.list.push(news);
+    this.totalNumberOfMovies++;
+  };
+
+  Program.prototype.programLength = function () {
+    var totalMovielength = 0;
+
+    for (var i = 0; i < this.list.length; i++) {
+      totalMovielength += this.list[i].length;
+    }
+
+    return totalMovielength;
+  };
+
+  Program.prototype.listOfMovies = function () {
+    var listOfAllMovies = "";
+
+    for (var i = 0; i < this.list.length; i++) {
+      listOfAllMovies += "\t\t\t\t\t\t" + this.list[i].getData() + "\n";
+    }
+
+    return listOfAllMovies;
+  };
+
+  Program.prototype.getData = function () {
+    return (
+      "" +
+      this.date.toLocaleDateString() +
+      ", program duration " +
+      this.programLength() +
+      "min" +
+      "\n" +
+      this.listOfMovies()
+    );
+  };
 
   function Festival(name) {
     this.name = name;
     this.listOfPrograms = [];
 
-    this.addProgram = function(newProgram) {
-      this.listOfPrograms.push(newProgram);
-    };
-
-    this.numberOfMoviesInAllPrograms = function() {
-      var counter = 0;
-
-      for (var i = 0; i < this.listOfPrograms.length; i++) {
-        counter += this.listOfPrograms[i].totalNumberOfMovies;
-      }
-
-      return counter + " movie titles";
-    };
-
-    this.listOfThePrograms = function() {
-      var listOfAllPrograms = "";
-      for (var i = 0; i < this.listOfPrograms.length; i++) {
-        listOfAllPrograms += "\t\t\t" + this.listOfPrograms[i].getData();
-      }
-      return listOfAllPrograms;
-    };
-
-    this.getData = function() {
-      return "" + this.name + " has " + this.numberOfMoviesInAllPrograms() + "\n" + this.listOfThePrograms();
-    };
   }
+  Festival.prototype.addProgram = function (newProgram) {
+    this.listOfPrograms.push(newProgram);
+  };
+
+  Festival.prototype.numberOfMoviesInAllPrograms = function () {
+    var counter = 0;
+
+    for (var i = 0; i < this.listOfPrograms.length; i++) {
+      counter += this.listOfPrograms[i].totalNumberOfMovies;
+    }
+
+    return counter + " movie titles";
+  };
+
+  Festival.prototype.listOfThePrograms = function () {
+    var listOfAllPrograms = "";
+    for (var i = 0; i < this.listOfPrograms.length; i++) {
+      listOfAllPrograms += "\t\t\t" + this.listOfPrograms[i].getData();
+    }
+    return listOfAllPrograms;
+  };
+
+  Festival.prototype.getData = function () {
+    return "" + this.name + " has " + this.numberOfMoviesInAllPrograms() + "\n" + this.listOfThePrograms();
+  };
+
 
   function createMovie(title, name, length) {
     var genreObject = new Genre(name);
