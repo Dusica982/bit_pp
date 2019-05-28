@@ -1,6 +1,6 @@
 "use strict";
 
-(function() {
+(function () {
   var productId = [];
 
   function zeroLeft(num) {
@@ -15,59 +15,62 @@
     this.name = name;
     this.price = parseFloat(price.toFixed(2));
     this.expirationData = expirationData;
-
-    this.getInfo = function() {
-      var firstLetter = this.name.slice(0, 1);
-      var lastLetter = this.name.slice(this.name.length - 1, this.name.length);
-      return (
-        "" +
-        firstLetter.toUpperCase() +
-        lastLetter.toUpperCase() +
-        zeroLeft(this.productId) +
-        ", " +
-        this.name +
-        ", " +
-        this.price
-      );
-    };
   }
+
+  Product.prototype.getInfo = function () {
+    var firstLetter = this.name.slice(0, 1);
+    var lastLetter = this.name.slice(this.name.length - 1, this.name.length);
+    return (
+      "" +
+      firstLetter.toUpperCase() +
+      lastLetter.toUpperCase() +
+      zeroLeft(this.productId) +
+      ", " +
+      this.name +
+      ", " +
+      this.price
+    );
+  };
 
   function ShopingBag() {
     this.listOfProducts = [];
 
-    this.addProduct = function(product) {
-      var now = new Date();
-      if (product.expirationData > now) {
-        this.listOfProducts.push(product);
-      }
-    };
-
-    this.calculateTotalPrice = function() {
-      var sum = 0;
-      for (var i = 0; i < this.listOfProducts.length; i++) {
-        sum = sum + this.listOfProducts[i].price;
-      }
-      return sum;
-    };
-
-    this.averageProductPrice = function() {
-      var sum = this.calculateTotalPrice();
-      var average = sum / this.listOfProducts.length;
-
-      console.log(average.toFixed(3));
-    };
-
-    this.getMostExpencive = function() {
-      var mostExpencive = this.listOfProducts[0];
-
-      for (var i = 1; i < this.listOfProducts.length; i++) {
-        if (this.listOfProducts[i].price > mostExpencive.price) {
-          mostExpencive = listOfProducts[i];
-        }
-      }
-      console.log(mostExpencive.getInfo());
-    };
   }
+
+  ShopingBag.prototype.addProduct = function (product) {
+    var now = new Date();
+    if (product.expirationData > now) {
+      this.listOfProducts.push(product);
+    }
+  };
+
+  ShopingBag.prototype.calculateTotalPrice = function () {
+    var sum = 0;
+    for (var i = 0; i < this.listOfProducts.length; i++) {
+      sum = sum + this.listOfProducts[i].price;
+    }
+    return sum;
+  };
+
+  ShopingBag.prototype.averageProductPrice = function () {
+    var sum = this.calculateTotalPrice();
+    var average = sum / this.listOfProducts.length;
+
+    console.log(average.toFixed(3));
+  };
+
+  ShopingBag.prototype.getMostExpencive = function () {
+    var mostExpencive = this.listOfProducts[0];
+
+    for (var i = 1; i < this.listOfProducts.length; i++) {
+      if (this.listOfProducts[i].price > mostExpencive.price) {
+        mostExpencive = listOfProducts[i];
+      }
+    }
+    console.log(mostExpencive.getInfo());
+  };
+
+
 
   function PaymentCard(accountBalance, status, data) {
     this.accountBalance = accountBalance;
