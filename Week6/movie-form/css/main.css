@@ -1,0 +1,42 @@
+.main-div {
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  width: 80%;
+  margin: auto;
+  border: 1px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+form label {
+  width: 100%;
+  display: block;
+  margin: 8px;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+form input,
+select,
+button {
+  width: 100%;
+  display: block;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+form button {
+  background-color: rgb(72, 177, 72);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 3px;
+}
