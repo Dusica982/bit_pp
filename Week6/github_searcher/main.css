@@ -5,4 +5,36 @@ h1 {
 input {
   display: inline-block;
   margin-left: 0px;
+  float: right;
+  border-radius: 10px;
+  margin: 15px;
+  width: 400px;
+  padding: 3px;
+  padding-left: 20px;
+}
+
+#magniflying-glass {
+  float: right;
+  width: 15px;
+  position: relative;
+  left: 35px;
+  margin-top: 20px;
+}
+
+span {
+  height: 20px;
+}
+
+#maindiv div {
+  float: left;
+  width: 30%;
+}
+
+#maindiv img {
+  width: 100%;
+}
+
+.mainmaindiv {
+  width: 80%;
+  margin: auto;
 }

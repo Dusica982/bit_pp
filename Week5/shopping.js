@@ -107,4 +107,5 @@
   var card = new PaymentCard(1000, "active", new Date(2019, 5, 15));
 
   checkoutAndBuy(bag, card);
+  
 })();
