@@ -1,0 +1,40 @@
+body {
+  background-color: #fffbbe;
+}
+
+.upperdiv {
+  width: 80%;
+  display: block;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: #fffbbe;
+}
+
+h1 {
+  display: inline;
+  float: left;
+  margin-left: 15%;
+  border-radius: 7px;
+  background-color: #eec1ea;
+  padding: 7px;
+}
+
+.span {
+  display: inline;
+  float: right;
+  margin-top: 30px;
+  margin-right: 15%;
+}
+
+#input {
+  width: 250px;
+  border-radius: 7px;
+  padding: 5px;
+  background-color: #be97dc;
+}
+
+#button {
+  padding: 5px;
+  border-radius: 7px;
+  background-color: #a374d5;
+}
