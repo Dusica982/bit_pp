@@ -1,34 +1,25 @@
 var controllerModule = function (data, ui) {
 
-    // function displayMostPopularShows(shows) {
-    //     ui.displayPopularShows(shows);
-    // }
+    function setupListenersOnShowClick() {
+        $('.tv-show').on('click', function () {
+            var showId = $(this).attr('data-show-id');
 
-    // function afterSearch(shows) {
-    //     ui.displayFoundShows()
-    // }
-
-    // function setupEventListeners() {
-    //     $('.input').keydown(function (e) {
-    //         if (e.keyCode === 13) {
-    //             e.preventDefault();
-    //             var searchInput = ui.getSearchInput();
-    //             data.getShows(searchInput);
-    //         }
-    //     })
-
-    // }
-
-
-
+            data.getSingleShow(showId, function (showData) {
+                ui.renderSingleShow(showData);
+            });
+        })
+    };
 
     function init() {
         data.getPopShows(function (shows) {
             ui.renderShows(shows);
+            setupListenersOnShowClick();
         });
+
     }
 
     return {
         init: init
     }
+
 }(dataModule, uiModule);

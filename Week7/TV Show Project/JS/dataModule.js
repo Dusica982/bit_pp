@@ -1,26 +1,28 @@
-var dataModule = function () {
+var dataModule = (function () {
+
     function getPopShows(callback) {
         var popShowsUrl = 'http://api.tvmaze.com/shows';
 
         $.get(popShowsUrl, function (data) {
-            callback(data.slice(0, 49));
+            callback(data.slice(0, 50));
         })
     };
 
-    // function getShows(searchInput, onSuccess) {
+    function getSingleShow(showId, callback) {
+        var singleShowUrl = 'http://api.tvmaze.com/shows/' + showId + '?embed[]=seasons&embed[]=cast';
 
-    //     var requestUrl = 'http://api.tvmaze.com/search/shows?q=' + searchInput;
+        $.get(singleShowUrl, function (data) {
+            callback(data);
 
-    //     $.get(requestUrl, function (data) {
-    //         onSuccess(data.items);
-    //     })
-    // }
+        })
+    }
 
 
     return {
         // getShows: getShows,
-        getPopShows: getPopShows
+        getPopShows: getPopShows,
+        getSingleShow: getSingleShow
     }
 
 
-}();
+})();
